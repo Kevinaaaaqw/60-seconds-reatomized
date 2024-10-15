@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue'
-import { ElAnchor, ElAnchorLink } from 'element-plus'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const ted = ref()
 const tedRect = ref()

@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import {
-    Menu as IconMenu,
-    Location, Burger, Cherry, Discount
-} from '@element-plus/icons-vue'
+import { Burger, Cherry, Discount } from '@element-plus/icons-vue'
 import { ref, watch, onMounted, onUnmounted } from 'vue'
-import { ElMenu, ElSubMenu, ElMenuItem, ElMenuItemGroup } from 'element-plus'
+import { ElMenu, ElMenuItem } from 'element-plus'
 import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
@@ -49,9 +46,9 @@ onUnmounted(() => {
 
 </script>
 <template>
-    <el-menu class="w-full flex items-center" style="border-bottom: 0;" :collapse="isCollapse" active-text-color="#ffd04b"
-        background-color="#0A4362" mode="horizontal" :default-active="activeMenu" text-color="#fff" @open="handleOpen"
-        @close="handleClose" @select="menuSelect">
+    <el-menu class="w-full flex items-center" style="border-bottom: 0;" :collapse="isCollapse"
+        active-text-color="#ffd04b" background-color="#0A4362" mode="horizontal" :default-active="activeMenu"
+        text-color="#fff" @open="handleOpen" @close="handleClose" @select="menuSelect">
         <el-menu-item index="home">
             <div class="flex justify-center">
                 <img class="object-cover w-70px" src="@/img/game_logo_sh.png" alt="Element logo" />

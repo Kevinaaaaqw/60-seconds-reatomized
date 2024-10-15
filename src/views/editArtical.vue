@@ -36,7 +36,7 @@ getArtical({ articalId: articalId.value }).then((snapshot) => {
     alert('錯誤' + err)
 })
 
-watch(() => route.params.articalId, (newId, oldId) => {
+watch(() => route.params.articalId, (newId) => {
     articalId.value = newId
 
     getArtical({ articalId: articalId.value }).then((snapshot) => {
@@ -79,12 +79,13 @@ const options = ref({
 
 onMounted(() => {
     quill = editor.value?.initialize(Quill)!
+    quill
 })
 
-const onModelValueChange = (value: string) => { }
+const onModelValueChange = () => { }
 const onTextChange = (({ delta }: { delta: Delta }) => (editorDelta.value = delta))
 const onSelectionChange = ({ range }: { range: Range }) => (editorRange.value = range)
-const onEditorChange = (eventName: string) => { }
+const onEditorChange = () => { }
 
 const sendEdit = () => {
     // updateArtical({ articalId: articalId.value, data: model.value }).then((res) => {

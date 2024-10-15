@@ -9,7 +9,7 @@ const email = ref()
 const password = ref()
 
 const login = () => {
-    signIn({ email: email.value, password: password.value }).then((res) => {
+    signIn({ email: email.value, password: password.value }).then(() => {
         router.push({ name: 'edit' })
     }).catch((reason) => {
         alert('登入失敗' + reason)

@@ -37,7 +37,7 @@ onMounted(() => {
   })
 })
 
-watch(() => route.params.articalId, (newId, oldId) => {
+watch(() => route.params.articalId, () => {
   if (Array.isArray(route.params.articalId)) {
     articalId.value = route.params.articalId[0]; // 使用第一個值
   } else {
