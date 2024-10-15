@@ -1,4 +1,4 @@
-import axios from 'axios'
+// import axios from 'axios'
 
 type artical = { articalId: string }
 
@@ -32,9 +32,8 @@ type artical = { articalId: string }
 //     return artical
 // }
 
-import { onAuthStateChanged, } from 'firebase/auth';
 import { get, ref, update } from 'firebase/database';
-import { database, auth } from '@/firebase';
+import { database } from '@/firebase';
 
 export const artical = (domainName: string, appPoolName: string) => {
     domainName

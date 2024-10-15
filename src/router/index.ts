@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 // import { memberApi } from '@/api'
 import {
     onAuthStateChanged,
@@ -51,6 +51,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
+    from
     const { title } = to.meta;
     const defaultTitle = '60秒核災生存-加強重製版';
     // const defaultDescription = '';
