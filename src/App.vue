@@ -11,7 +11,7 @@ import { } from '@/api/index'
     </div>
     <div class=" flex-grow-1 flex justify-center">
       <RouterView />
-      <el-backtop :right="100" :bottom="100" />
+      <el-backtop :right="10" :bottom="10" />
     </div>
   </div>
 </template>
