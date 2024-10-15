@@ -1,0 +1,10 @@
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+  color: white;
+  transition-duration: 300ms;
+}
+a:hover {
+  color: #28d943;
+}
+
