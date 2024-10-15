@@ -2,10 +2,13 @@
 import { Burger, Cherry, Discount } from '@element-plus/icons-vue'
 import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { ElMenu, ElMenuItem } from 'element-plus'
-import { useRoute, useRouter } from 'vue-router';
+import {
+    useRoute,
+    //  useRouter
+} from 'vue-router';
 
 const route = useRoute();
-const router = useRouter();
+// const router = useRouter();
 const activeMenu = ref<string>(''); // 當前選中的菜單項
 
 // 監聽路由名稱變化
@@ -23,11 +26,11 @@ const handleClose = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
 }
 
-const menuSelect = (key: string) => {
+// const menuSelect = (key: string) => {
 
-    let sleep = key.split('/')
-    router.push({ name: sleep[0], params: { articalId: sleep[1] } })
-}
+//     let sleep = key.split('/')
+//     router.push({ name: sleep[0], params: { articalId: sleep[1] } })
+// }
 
 
 const isCollapse = ref<boolean>(false)
@@ -48,48 +51,38 @@ onUnmounted(() => {
 <template>
     <el-menu class="w-full flex items-center" style="border-bottom: 0;" :collapse="isCollapse"
         active-text-color="#ffd04b" background-color="#0A4362" mode="horizontal" :default-active="activeMenu"
-        text-color="#fff" @open="handleOpen" @close="handleClose" @select="menuSelect">
-        <el-menu-item index="home">
-            <div class="flex justify-center">
-                <img class="object-cover w-70px" src="@/img/game_logo_sh.png" alt="Element logo" />
-            </div>
-        </el-menu-item>
-        <!-- <el-sub-menu index="1">
-            <template #title>
+        text-color="#fff" @open="handleOpen" @close="handleClose">
+        <RouterLink :to="{ name: 'home' }">
+            <el-menu-item index="home">
+                <div class="flex justify-center">
+                    <img class="object-cover w-70px" src="@/img/game_logo_sh.png" alt="Element logo" />
+                </div>
+            </el-menu-item>
+        </RouterLink>
+        <RouterLink :to="{ name: 'article', params: { articalId: 'CompleteGuide' } }">
+            <el-menu-item index="article/CompleteGuide">
                 <el-icon>
-                    <location />
+                    <Burger />
                 </el-icon>
-                <span>Navigator One</span>
-            </template>
-<el-menu-item-group title="Group One">
-    <el-menu-item index="1-1">item one</el-menu-item>
-    <el-menu-item index="1-2">item two</el-menu-item>
-</el-menu-item-group>
-<el-menu-item-group title="Group Two">
-    <el-menu-item index="1-3">item three</el-menu-item>
-</el-menu-item-group>
-<el-sub-menu index="1-4">
-    <template #title>item four</template>
-    <el-menu-item index="1-4-1">item one</el-menu-item>
-</el-sub-menu>
-</el-sub-menu> -->
-        <el-menu-item index="article/CompleteGuide">
-            <el-icon>
-                <Burger />
-            </el-icon>
-            <span>Steam 全程就攻略</span>
-        </el-menu-item>
-        <el-menu-item index="article/ItemIntroduction">
-            <el-icon>
-                <Cherry />
-            </el-icon>
-            <span>物品介紹</span>
-        </el-menu-item>
-        <el-menu-item index="article/EventIntroduction">
-            <el-icon>
-                <Discount />
-            </el-icon>
-            <span>事件介紹</span>
-        </el-menu-item>
+                <span>Steam 全程就攻略</span>
+            </el-menu-item>
+        </RouterLink>
+        <RouterLink :to="{ name: 'article', params: { articalId: 'ItemIntroduction' } }">
+            <el-menu-item index="
+            article/ItemIntroduction">
+                <el-icon>
+                    <Cherry />
+                </el-icon>
+                <span>物品介紹</span>
+            </el-menu-item>
+        </RouterLink>
+        <RouterLink :to="{ name: 'article', params: { articalId: 'EventIntroduction' } }">
+            <el-menu-item index="article/EventIntroduction">
+                <el-icon>
+                    <Discount />
+                </el-icon>
+                <span>事件介紹</span>
+            </el-menu-item>
+        </RouterLink>
     </el-menu>
 </template>
