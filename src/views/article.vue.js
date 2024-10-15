@@ -82,13 +82,13 @@ function __VLS_template() {
     // CSS variable injection end 
     let __VLS_resolvedLocalAndGlobalComponents;
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("w-full bg-deep_ocean_blue flex justify-center min-h-100vh") }, });
-    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("w-95% bg-ocean_blue border-white border-1px border-solid rounded-sm my-5 p-5 box-border bg-texture text-white") }, });
-    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("w-full flex gap-4") }, });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("w-95% max-w-1000px h-fit bg-ocean_blue border-white border-1px border-solid rounded-sm my-5 p-5 box-border bg-texture text-white") }, });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("w-full flex max-sm-flex-wrap gap-4 text-sm") }, });
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({});
     (__VLS_ctx.artica?.creat_time);
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({});
     (__VLS_ctx.artica?.update_time);
-    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("mt-5 ql-editor") }, });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("mt-5 ql-editor [&_img]:max-w-full") }, });
     __VLS_directiveAsFunction(__VLS_directives.vHtml)(null, { ...__VLS_directiveBindingRestFields, value: (__VLS_ctx.artica?.content) }, null, null);
     __VLS_styleScopedClasses['w-full'];
     __VLS_styleScopedClasses['bg-deep_ocean_blue'];
@@ -96,6 +96,8 @@ function __VLS_template() {
     __VLS_styleScopedClasses['justify-center'];
     __VLS_styleScopedClasses['min-h-100vh'];
     __VLS_styleScopedClasses['w-95%'];
+    __VLS_styleScopedClasses['max-w-1000px'];
+    __VLS_styleScopedClasses['h-fit'];
     __VLS_styleScopedClasses['bg-ocean_blue'];
     __VLS_styleScopedClasses['border-white'];
     __VLS_styleScopedClasses['border-1px'];
@@ -108,9 +110,12 @@ function __VLS_template() {
     __VLS_styleScopedClasses['text-white'];
     __VLS_styleScopedClasses['w-full'];
     __VLS_styleScopedClasses['flex'];
+    __VLS_styleScopedClasses['max-sm-flex-wrap'];
     __VLS_styleScopedClasses['gap-4'];
+    __VLS_styleScopedClasses['text-sm'];
     __VLS_styleScopedClasses['mt-5'];
     __VLS_styleScopedClasses['ql-editor'];
+    __VLS_styleScopedClasses['[&_img]:max-w-full'];
     var __VLS_slots;
     var __VLS_inheritedAttrs;
     const __VLS_refs = {};

@@ -72,7 +72,7 @@ watch(() => route.params.articalId, () => {
 <template>
   <div class="w-full bg-deep_ocean_blue flex justify-center min-h-100vh">
     <div
-      class="w-95% h-fit bg-ocean_blue border-white border-1px border-solid rounded-sm my-5 p-5 box-border bg-texture text-white">
+      class="w-95% max-w-1000px h-fit bg-ocean_blue border-white border-1px border-solid rounded-sm my-5 p-5 box-border bg-texture text-white">
       <div class="w-full flex max-sm-flex-wrap gap-4 text-sm">
         <div>發布時間：{{ artica?.creat_time }}</div>
         <div>最後更新：{{ artica?.update_time }}</div>

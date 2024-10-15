@@ -37,8 +37,8 @@ function __VLS_template() {
     const __VLS_11 = __VLS_resolvedLocalAndGlobalComponents.ElBacktop;
     /** @type { [typeof __VLS_components.ElBacktop, typeof __VLS_components.elBacktop, ] } */
     // @ts-ignore
-    const __VLS_12 = __VLS_asFunctionalComponent(__VLS_11, new __VLS_11({ right: ((100)), bottom: ((100)), }));
-    const __VLS_13 = __VLS_12({ right: ((100)), bottom: ((100)), }, ...__VLS_functionalComponentArgsRest(__VLS_12));
+    const __VLS_12 = __VLS_asFunctionalComponent(__VLS_11, new __VLS_11({ right: ((10)), bottom: ((10)), }));
+    const __VLS_13 = __VLS_12({ right: ((10)), bottom: ((10)), }, ...__VLS_functionalComponentArgsRest(__VLS_12));
     __VLS_styleScopedClasses['w-full'];
     __VLS_styleScopedClasses['min-h-100vh'];
     __VLS_styleScopedClasses['box-border'];

@@ -10,6 +10,15 @@ const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
+            // path: "*",
+            // path: "/:catchAll(.*)",
+            path: "/:notFound",
+            name: "NotFound",
+            component: import('@/views/notFoundPage.vue'),
+            meta: {
+                requiresAuth: false
+            }
+        }, {
             path: '/',
             name: 'home',
             meta: { title: '60秒核災生存-加強重製版' },
@@ -39,6 +48,7 @@ const router = createRouter({
             meta: { title: '60秒核災生存-後臺登入' },
             component: () => import('@/views/logIn.vue')
         },
+
     ], scrollBehavior(to) {//, from, savedPosition
         if (to.hash) {
             return {

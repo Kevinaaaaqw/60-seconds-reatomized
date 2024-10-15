@@ -109,12 +109,17 @@ const sendEdit = () => {
 }
 </script>
 <template>
-    <div class="w-90%">
-        <QuillyEditor ref="editor" v-model="model" :options="options" @update:model-value="onModelValueChange"
-            @text-change="onTextChange" @selection-change="onSelectionChange" @editor-change="onEditorChange" />
-        <ElButton @click="sendEdit" type="warning">
-            送出
-        </ElButton>
+    <div class="bg-ocean_blue w-100% flex justify-center flex-wrap h-fit">
+        <div class="w-90% max-w-1000px h-fit">
+            <div class="bg-white h-fit min-h-100vh">
+                <QuillyEditor ref="editor" v-model="model" :options="options" @update:model-value="onModelValueChange"
+                    @text-change="onTextChange" @selection-change="onSelectionChange" @editor-change="onEditorChange" />
+        
+                <ElButton  class="mt-10" @click="sendEdit" type="warning">
+                    送出
+                </ElButton>
+            </div>
+        </div>
     </div>
 </template>
 <style scoped></style>

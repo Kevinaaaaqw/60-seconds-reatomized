@@ -117,7 +117,9 @@ function __VLS_template() {
     // CSS variable injection 
     // CSS variable injection end 
     let __VLS_resolvedLocalAndGlobalComponents;
-    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("w-90%") }, });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("bg-ocean_blue w-100% flex justify-center flex-wrap h-fit") }, });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("w-90% max-w-1000px h-fit") }, });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("bg-white h-fit min-h-100vh") }, });
     const __VLS_0 = __VLS_resolvedLocalAndGlobalComponents.QuillyEditor;
     /** @type { [typeof __VLS_components.QuillyEditor, ] } */
     // @ts-ignore
@@ -145,8 +147,8 @@ function __VLS_template() {
     const __VLS_12 = __VLS_resolvedLocalAndGlobalComponents.ElButton;
     /** @type { [typeof __VLS_components.ElButton, typeof __VLS_components.ElButton, ] } */
     // @ts-ignore
-    const __VLS_13 = __VLS_asFunctionalComponent(__VLS_12, new __VLS_12({ ...{ 'onClick': {} }, type: ("warning"), }));
-    const __VLS_14 = __VLS_13({ ...{ 'onClick': {} }, type: ("warning"), }, ...__VLS_functionalComponentArgsRest(__VLS_13));
+    const __VLS_13 = __VLS_asFunctionalComponent(__VLS_12, new __VLS_12({ ...{ 'onClick': {} }, ...{ class: ("mt-10") }, type: ("warning"), }));
+    const __VLS_14 = __VLS_13({ ...{ 'onClick': {} }, ...{ class: ("mt-10") }, type: ("warning"), }, ...__VLS_functionalComponentArgsRest(__VLS_13));
     let __VLS_18;
     const __VLS_19 = {
         onClick: (__VLS_ctx.sendEdit)
@@ -155,7 +157,19 @@ function __VLS_template() {
     let __VLS_16;
     __VLS_nonNullable(__VLS_17.slots).default;
     const __VLS_17 = __VLS_pickFunctionalComponentCtx(__VLS_12, __VLS_14);
+    __VLS_styleScopedClasses['bg-ocean_blue'];
+    __VLS_styleScopedClasses['w-100%'];
+    __VLS_styleScopedClasses['flex'];
+    __VLS_styleScopedClasses['justify-center'];
+    __VLS_styleScopedClasses['flex-wrap'];
+    __VLS_styleScopedClasses['h-fit'];
     __VLS_styleScopedClasses['w-90%'];
+    __VLS_styleScopedClasses['max-w-1000px'];
+    __VLS_styleScopedClasses['h-fit'];
+    __VLS_styleScopedClasses['bg-white'];
+    __VLS_styleScopedClasses['h-fit'];
+    __VLS_styleScopedClasses['min-h-100vh'];
+    __VLS_styleScopedClasses['mt-10'];
     var __VLS_slots;
     var __VLS_inheritedAttrs;
     const __VLS_refs = {
