@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, watch, nextTick } from 'vue'
+import { ref, onMounted, watch, nextTick, Ref } from 'vue'
 import { articalApi } from '@/api'
 import { useRoute } from 'vue-router'
 import { Location } from '@element-plus/icons-vue'
@@ -16,15 +16,15 @@ const artica = ref<artica>({
   update_time: '',
 })
 
-const replaceWithNumberedString = (text, targetString, replacementString) => {
+const replaceWithNumberedString = (text: string, targetString: string, replacementString: string) => {
   let counter = 1;
   const regex = new RegExp(targetString, 'g');  // 'g' 表示全域搜尋
   return text.replace(regex, () => `${replacementString}${counter++}"`);
 }
 
-const content = ref<Element>(null);
+const content = ref<Element>();
 const anchors = ref<{ id: string, text: string }[]>([]);
-const fetchAndProcessArticleContent = (articalId) => {
+const fetchAndProcessArticleContent = (articalId: Ref) => {
   getArtical({ articalId: articalId.value }).then((snapshot) => {
     if (snapshot.exists()) {
       const data = snapshot.val();
@@ -35,13 +35,11 @@ const fetchAndProcessArticleContent = (articalId) => {
 
 
       nextTick(() => {
-        const h2Elements = content.value.querySelectorAll('h2');
+        const h2Elements = content.value?.querySelectorAll('h2');
         anchors.value = []
-        h2Elements.forEach((h2) => {
-          anchors.value.push({ id: h2.id, text: h2.textContent }); // 將 h2 的 id 和內容存入 anchors 陣列
+        h2Elements?.forEach((h2) => {
+          anchors.value.push({ id: h2.id, text: h2.textContent || '' }); // 將 h2 的 id 和內容存入 anchors 陣列
         });
-        console.log(content.value);
-        console.log(content.value.querySelectorAll('h2'));
       })
 
     } else {
@@ -99,8 +97,7 @@ watch(() => route.params.articalId, () => {
       class="absolute top-0 left-0 w-40px h-40px rounded-full bg-white flex justify-center items-center cursor-pointer hover:bg-green/30 duration-300">
       <Location class="w-30px" />
     </div>
-    <div
-      class="absolute left-0 top-50% translate--100% rounded-xl bg-white box-border overflow-x-hidden duration-300"
+    <div class="absolute left-0 top-50% translate--100% rounded-xl bg-white box-border overflow-x-hidden duration-300"
       :class="{ 'p-1': isAnchorOpen, 'w-200px': isAnchorOpen, 'h-200px': isAnchorOpen, 'p-0': !isAnchorOpen, 'w-0': !isAnchorOpen, 'h-0px': !isAnchorOpen }">
       <div class="w-full h-full pr-17px overflow-x-hidden overflow-y-scroll box-content">
         <div class="w-full flex" v-for="i in anchors">
