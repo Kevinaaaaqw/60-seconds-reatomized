@@ -99,7 +99,7 @@ watch(() => route.params.articalId, () => {
     </div>
     <div class="absolute left-0 top-50% translate--100% rounded-xl bg-white box-border overflow-x-hidden duration-300"
       :class="{ 'p-1': isAnchorOpen, 'w-200px': isAnchorOpen, 'h-200px': isAnchorOpen, 'p-0': !isAnchorOpen, 'w-0': !isAnchorOpen, 'h-0px': !isAnchorOpen }">
-      <div class="w-full h-full pr-17px overflow-x-hidden overflow-y-scroll box-content">
+      <div class="w-full h-full px-10px pr-17px overflow-x-hidden overflow-y-scroll box-content">
         <div class="w-full flex" v-for="i in anchors">
           <a :title="i.text" class="text-black text-lg my-1 text-truncate w-100%" :href="'#' + i.id">{{
             i.text }}</a>
